@@ -1,0 +1,14 @@
+ua\com\company\component\EntitySuplier.class
+ua\com\company\component\FillDataBase.class
+ua\com\company\service\WetherServiceIntrf.class
+ua\com\company\serviceImpl\WeatherService.class
+ua\com\company\controller\AppController.class
+ua\com\company\config\ThymeLeafConfig.class
+ua\com\company\dao\WeatherDAOInterf.class
+ua\com\company\daoImpl\WetherInfoDAO.class
+ua\com\company\component\DoubleValuesHandler.class
+ua\com\company\config\WebInit.class
+ua\com\company\config\DataBaseConfig.class
+ua\com\company\config\ApplicationConfig.class
+ua\com\company\entity\WeatherInfo.class
+ua\com\company\component\DateConverter.class

@@ -1,0 +1,73 @@
+<!DOCTYPE html> 
+ <html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml"> 
+ <head> 
+     <meta charset="UTF-8"/> 
+     <meta name="viewport" 
+           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/> 
+     <meta http-equiv="X-UA-Compatible" content="ie=edge"/> 
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	 <link rel = "stylesheet" href = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	 <link rel="stylesheet" href="style/style.css"/>
+     <title>index</title> 
+ </head> 
+<body>
+	<div class="container-fluid">
+		<div class="row row1">
+			<div class="col-md-3 col-sm-3 navbar-header row1">
+				<span>header</span>
+			</div>
+		<div class="col-md-7 col-sm-6 row1">
+			<nav>
+				<ul class="nav navbar-nav upperMeny">
+					<li>header</li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li id="lang"></li>
+				</ul>
+			</nav>
+		</div>
+		<div class="col-md-2 col-sm-3 nav navbar-nav row1">
+			<span>header</span>
+		</div>
+	</div>
+	
+		<div class="row">
+			<div class="col-md-9 middleBlock">
+				<h1>weather main page</h1>
+				<form action="#" th:action="@{dateVal}" method="post" class="form-inline">
+					<label>from</label>
+					<input type="date" th:min="${min}" th:max="${max}" name="min">
+					<label> to </label>
+					<input type="date" th:min="${min}" th:max="${max}" name="max">
+					<input type="submit" value="show">
+				</form>
+				<p>city : LVIV</p>
+				<span th:text ="' AVG : ' + ((${avg}==null)?(''):(${avg}))" class="info">awg</span>
+				<span th:text="'  MIN TEMP : ' + ((${minTemp}==null)?(''):(${minTemp}))" class="info">min</span>
+				<span th:text=" 'MAX TEMP : ' + ((${maxTemp}==null)?(''):(${maxTemp}))" class="info">max</span>
+				<div>
+					<table class="table table-bordered">
+						<tr>
+							<td>date and time</td>
+							<td>average temperature</td>
+							<td>minimal temperature</td>
+							<td>maximal temperature</td>
+						</tr>
+						<tr th:each="object : ${objects}">
+							<td th:text="${object.dateAndTime}">date and time</td>
+							<td th:text="${object.averageTemp}">average temperature</td>
+							<td th:text="${object.minTemp}">minimal temperature</td>
+							<td th:text="${object.maxTemp}">maximal temperature</td>
+						</tr>
+						
+					</table>
+				</div>
+				
+			</div>
+			<div class="adv col-md-3"><span>adv</span></div>
+			<div class="col-md-12 col-sm-12 container-fluid footer"><span>footer</span></div>
+		</div>
+	</div>
+</body>
+</html>
