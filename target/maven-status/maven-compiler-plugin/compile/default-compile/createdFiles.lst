@@ -1,6 +1,7 @@
 ua\com\company\component\EntitySuplier.class
 ua\com\company\component\FillDataBase.class
 ua\com\company\service\WetherServiceIntrf.class
+ua\com\company\component\MyTestBean.class
 ua\com\company\serviceImpl\WeatherService.class
 ua\com\company\controller\AppController.class
 ua\com\company\config\ThymeLeafConfig.class

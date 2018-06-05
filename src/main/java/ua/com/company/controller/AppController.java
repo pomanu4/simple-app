@@ -20,12 +20,8 @@ public class AppController {
 	@Autowired
 	private WetherServiceIntrf weatherServ;
 
-	@Autowired
-	private FillDataBase fillDB;
-
 	@RequestMapping(path = { "/" }, method = RequestMethod.GET)
 	public String indexPage(Model model) {
-		fillDB.getAndSaveEntities();
 		List<WeatherInfo> entities = weatherServ.getAll();
 
 		String minDate = DateConverter.getStringDateRepresent(weatherServ.getMinDateSecond());
@@ -33,6 +29,7 @@ public class AppController {
 		model.addAttribute("min", minDate);
 		model.addAttribute("max", maxDate);
 		model.addAttribute("objects", entities);
+		System.out.println("text");
 		return "index";
 	}
 

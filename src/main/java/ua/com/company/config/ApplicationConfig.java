@@ -11,6 +11,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
+
 @Configuration
 @EnableWebMvc
 @ComponentScans({ @ComponentScan("ua.com.company.controller"), @ComponentScan("ua.com.company.component") })
@@ -28,7 +29,7 @@ public class ApplicationConfig extends WebMvcConfigurerAdapter {
 
 		return source;
 	}
-
+	
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
 		registry.addResourceHandler("/style/**").addResourceLocations("/WEB-INF/static/");
